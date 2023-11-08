@@ -1,4 +1,4 @@
-using AspNetCoreMvcHtmx.Core;
+using RazorComponentsInMvc.Core;
 using Serilog;
 using Serilog.Extensions.Logging;
 

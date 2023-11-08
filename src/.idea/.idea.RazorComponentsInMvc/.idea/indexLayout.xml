@@ -3,6 +3,7 @@
   <component name="UserContentModel">
     <attachedFolders>
       <Path>../../AspNetCoreMvcHtmxTemplate</Path>
+      <Path>../../razor-components-in-mvc</Path>
     </attachedFolders>
     <explicitIncludes />
     <explicitExcludes />

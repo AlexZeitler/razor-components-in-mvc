@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using AspNetCoreMvcHtmx.Models;
+using RazorComponentsInMvc.Models;
 
-namespace AspNetCoreMvcHtmx.Controllers;
+namespace RazorComponentsInMvc.Controllers;
 
 public class HomeController : Controller
 {
