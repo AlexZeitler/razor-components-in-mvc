@@ -1,8 +1,23 @@
-﻿@{
-  ViewData["Title"] = "Home Page";
+﻿@using RazorComponentsInMvc.Views.Shared.Components
+@using Microsoft.Extensions.DependencyInjection;
+@{
+  var helper = Context.RequestServices.GetService<IHtmlHelper>() ?? throw new ArgumentNullException();
+  var context = Renderer.CreateDefaultContext(Context.RequestServices);
 }
 
 <div class="text-center">
-  <h1 class="text-4xl">Welcome</h1>
+  @(await Html.RenderComponentAsync<Header>(RenderMode.ServerPrerendered, new
+  {
+    ChildContent = "Some Child Content",
+    Items = new List<string>
+    {
+      "Item 1",
+      "Item 2"
+    },
+    ChildContent2 = await Renderer.RenderAsync<HeaderChild>(helper, context, new
+    {
+    })
+  }))
+
   <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

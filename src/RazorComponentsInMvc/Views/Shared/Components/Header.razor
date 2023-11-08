@@ -1,0 +1,23 @@
+<h1 class="text-4xl">@ChildContent</h1>
+<ul>
+    @foreach (var item in Items)
+    {
+        <li>@item</li>
+    }
+</ul>
+@RF1
+
+
+@code {
+
+    [Parameter]
+    public string? ChildContent { get; set; }
+
+    [Parameter]
+    public List<string>? Items { get; set; }
+
+    [Parameter]
+    public string? ChildContent2 { get; set; }
+
+    private RenderFragment RF1 => (builder) => { builder.AddMarkupContent(0, $"<div class=\"bg-green-200\">{ChildContent2}</div>"); };
+}

@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./Views/**/*.{cshtml,js}"],
+  content: ["./Views/**/*.{cshtml,razor,js}"],
   safelist: [
     'input-validation-error'
   ],

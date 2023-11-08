@@ -1,3 +1,4 @@
+using RazorComponentsInMvc;
 using RazorComponentsInMvc.Core;
 using Serilog;
 using Serilog.Extensions.Logging;
@@ -11,6 +12,8 @@ var logger = new SerilogLoggerFactory(Log.Logger)
 // Add services to the container.
 builder.Services.AddControllersWithViews()
   .AddRazorRuntimeCompilation();
+
+builder.Services.AddServerSideBlazor();
 
 var app = builder.Build();
 
@@ -28,6 +31,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.MapBlazorHub();
+
 
 app.MapControllerRoute(
   name: "default",
